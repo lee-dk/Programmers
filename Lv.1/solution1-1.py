@@ -10,7 +10,7 @@
     numbers의 모든 수는 0 이상 100 이하입니다.
 '''
 #풀이
-def solution(numbers):
+def solution1(numbers):
     answer = []
     if len(numbers) >= 2 and len(numbers) <= 100:
         for i in range(len(numbers)-1) :
@@ -20,3 +20,11 @@ def solution(numbers):
                     answer.append(num)                
     answer.sort()
     return answer
+
+# 다른 사람의 풀이
+def solution2(numbers):
+    answer = []
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            answer.append(numbers[i] + numbers[j])
+    return sorted(list(set(answer)))
